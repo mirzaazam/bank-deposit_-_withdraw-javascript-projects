@@ -5,6 +5,19 @@ document.getElementById('submit-btn').addEventListener('click', function(){
     const depositInputElement = document.getElementById('deposit-input');
     const depositInputElementString = document.getElementById('deposit-input').value;
     const depositInputValue = parseFloat(depositInputElementString);
+    depositInputElement.value = '';
+
+    //logic for Nagetive value problem.
+    if ( depositInputValue < 0 ){
+        alert('Plase enter positive ammount!')
+        return;
+    }
+
+    //logic for NAN problem
+    if(isNaN(depositInputValue)){
+        alert('please write a current ammount!');
+        return;
+    }
 
     // deposit box
     const depositTextElement = document.getElementById('depost-value');
@@ -14,7 +27,6 @@ document.getElementById('submit-btn').addEventListener('click', function(){
 
     // set the value in deposit house
     depositTextElement.innerText = totalDepositValue;
-    depositInputElement.value = '';
 
     //balance set value
     const balanceTextElement = document.getElementById('balance-value');
@@ -23,7 +35,6 @@ document.getElementById('submit-btn').addEventListener('click', function(){
     const totalBalance = depositInputValue + balanceValue;
     balanceTextElement.innerText = totalBalance;
 }); 
-
 
 //for personal withdraw
 document.getElementById('withdraw-btn').addEventListener('click', function(){
@@ -37,6 +48,10 @@ document.getElementById('withdraw-btn').addEventListener('click', function(){
     //logic for NAN problem
     if (isNaN(withdrawInputValue)){
         alert('Plase write the ammount!');
+        return;
+    }
+    if ( withdrawInputValue < 0 ){
+        alert('Plase enter your right ammount!')
         return;
     }
 
