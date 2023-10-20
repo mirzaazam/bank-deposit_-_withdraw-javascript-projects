@@ -1,4 +1,4 @@
-//for personal deposit and withdraw
+//for personal deposit
 document.getElementById('submit-btn').addEventListener('click', function(){
 
     //input field
@@ -23,3 +23,45 @@ document.getElementById('submit-btn').addEventListener('click', function(){
     const totalBalance = depositInputValue + balanceValue;
     balanceTextElement.innerText = totalBalance;
 }); 
+
+
+//for personal withdraw
+document.getElementById('withdraw-btn').addEventListener('click', function(){
+    
+    //withdraw input field
+    const withdrawInputElement = document.getElementById('withdraw-input');
+    const withdrawInputElementString = document.getElementById('withdraw-input').value;
+    const withdrawInputValue = parseFloat(withdrawInputElementString);
+    withdrawInputElement.value = '';
+    
+    //logic for NAN problem
+    if (isNaN(withdrawInputValue)){
+        alert('Plase write the ammount!');
+        return;
+    }
+
+    //get balance elements
+    const balanceTextElement = document.getElementById('balance-value');
+    const balanceTextElementString = document.getElementById('balance-value').innerText;
+    const balanceValue = parseFloat(balanceTextElementString);
+
+    //logic for banalce er cheye Taka beshi uthate parbe nah ttai deya
+    if( withdrawInputValue > balanceValue ){
+        alert("You don't have enough money!");
+        return;
+    }
+
+    //balance subtruct
+    const withdrawBalance = balanceValue - withdrawInputValue;
+    balanceTextElement.innerText = withdrawBalance;
+
+    //withdraw box 
+    const withTextElement = document.getElementById('withdraw-value');
+    const withTextElementString = document.getElementById('withdraw-value').innerText;
+    const withdrawTextValue = parseFloat(withTextElementString);
+
+    //withdraw box calculate
+    const withdrawCalculate = withdrawInputValue + withdrawTextValue;
+    withTextElement.innerText = withdrawCalculate;
+
+});
