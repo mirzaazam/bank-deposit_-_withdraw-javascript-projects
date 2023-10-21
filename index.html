@@ -11,12 +11,12 @@
 <body>
     <header>
         <div class="mt-12">
-            <img class="max-w-xs mx-auto" style="max-width: 300px;" src="./pictures/IBBL-logo-Eng.png" alt=""><hr>
+            <img class="mx-auto max-w-xs" src="./pictures/IBBL-logo-Eng.png" alt=""><hr>
         </div>
     </header>
     <main>
         <!-- deposit section -->
-        <section class="grid grid-cols-3 w-9/12 mx-auto mt-10 gap-4">
+        <section class="grid sm:grid-cols-1 lg:grid-cols-3 w-9/12 mx-auto mt-10 gap-4">
             <div class="bg-green-700 p-8 rounded-xl">
                 <h3 class="text-3xl text-white">Deposit</h3>
                 <h1 class="text-4xl text-white">$<span id="depost-value">00</span></h1>
@@ -35,23 +35,21 @@
 
         <!-- input section -->
         <section class="mt-10">
-            <div class="grid grid-cols-2 gap-5 w-9/12 mx-auto">
+            <div class="grid sm:grid-cols-1 lg:grid-cols-2 gap-5 w-9/12 mx-auto">
 
                 <div class="bg-green-700 p-10 text-center rounded">
-                    <input class="block w-9/12 rounded mx-auto p-2 font-semibold text-lg" type="text" name="" id="deposit-input" placeholder="$Type your amount for deposit">
-                    <button id="submit-btn" class="px-5 py-2 rounded font-semibold bg-slate-200 mt-3 hover:bg-sky-700 hover:text-white">Submit</button>
+                    <input class="block sm:w-9/12 md:w-9/12 lg:w-9/12 rounded mx-auto p-2 font-semibold text-lg" type="text" name="" id="deposit-input" placeholder="$Type your amount for deposit">
+                    <button id="submit-btn" class="px-5 py-2 rounded font-semibold bg-slate-200 mt-3 hover:bg-sky-700 hover:text-white">Deposit</button>
                 </div>
 
                 <div class="bg-green-700 p-10 text-center rounded">
-                    <input id="withdraw-input" class="block w-9/12 rounded mx-auto p-2 font-semibold text-lg" type="text" name=""  placeholder="$Type your amount for withdraw">
+                    <input id="withdraw-input" class="block sm:w-9/12 md:w-9/12 lg:w-9/12 rounded mx-auto p-2 font-semibold text-lg" type="text" name=""  placeholder="$Type your amount for withdraw">
                     <button id="withdraw-btn" class="px-5 py-2 rounded font-semibold bg-slate-200 mt-3 hover:bg-sky-700 hover:text-white">Withdraw</button>
                 </div>
 
             </div>
         </section>
     </main>
-
-
     <script src="./js/deposit.js"></script>
 </body>
 
